@@ -85,6 +85,7 @@ async def on_message(message):
         await message.channel.send(file=discord.File(filepath))
         await message.channel.send(m)
     if message.content.startswith('http://'):
-        m =  "↑このURL大丈夫なんだギャオ？クリックする前に確認したほうがいいギャオ！！"
+        await message.delete()#メッセージの削除
+        m =  message.author.name + "さんの貼ってくれたURL怪しいのでごめんけど、消したギャオ！"
         await message.channel.send(m)
 client.run(config.DISCORD_TOKEN)
