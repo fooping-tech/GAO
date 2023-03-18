@@ -37,6 +37,9 @@ ROBOT_ID=[your robot id (ex. '/dev/cu.usbserial-xxxxxxxxx')
 ```
 python bot.py を実行して、GAOボットを起動します。
 
+GAOロボットは以下のリポジトリを参照してください。
+https://github.com/fukusuke007/GAO_ROBOT
+
 ## 使い方
 DAOっぽくないキーワードを検出すると、botがDAOっぽくないことを申し入れるコメントを投稿します。
 以下は、GAOがサポートするコマンドの一覧です。
