@@ -20,10 +20,12 @@ GAOを動作させるのに必要なライブラリ
 必要なパッケージをインストールします。
 ```
 pip install discord.py
+pip install pyserial
 pip install python-dotenv
 ```
 
-ボットのリプライで使用したい画像を追加してください。
+/imgフォルダを作成し、
+ボットのリプライで使用したい画像をフォルダ内に追加してください。
 
 Discordの開発者ポータルで新しいアプリケーションを作成し、ボットを作成して、トークンを取得します。
 https://discordpy.readthedocs.io/ja/latest/discord.html
@@ -38,6 +40,7 @@ ROBOT_ID=[your robot id (ex. '/dev/cu.usbserial-xxxxxxxxx')
 python bot.py を実行して、GAOボットを起動します。
 
 GAOロボットは以下のリポジトリを参照してください。
+
 https://github.com/fukusuke007/GAO_ROBOT
 
 ## 使い方
