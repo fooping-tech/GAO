@@ -4,9 +4,11 @@ GAOは、Discord上でDAOらしからぬ中央集権を匂わせる挙動を検�
 
 ## 動作環境
 
-GAOを動作させるには、以下のものが必要です。
+GAOを動作させるのに必要なライブラリ
 
-Python 3.6以上
+* Python 3.6以上
+* discord.py                        2.2.2
+* pyserial                          3.5
 
 
 ## インストール方法
@@ -37,12 +39,12 @@ python bot.py を実行して、GAOボットを起動します。
 DAOっぽくないキーワードを検出すると、botがDAOっぽくないことを申し入れるコメントを投稿します。
 以下は、GAOがサポートするコマンドの一覧です。
 
-トヨタウェイ : T社のValue画像を表示します。
-ミッション : T社のMission画像を表示します。
-ヴィジョン : T社のVision画像を表示します。
-toyotaway : T社のValue画像(English)を表示します。
-mission : T社のMission画像(English)を表示します。
-vision : T社のVision画像(English)を表示します。
+* トヨタウェイ : T社のValue画像を表示します。
+* ミッション : T社のMission画像を表示します。
+* ヴィジョン : T社のVision画像を表示します。
+* toyotaway : T社のValue画像(English)を表示します。
+* mission : T社のMission画像(English)を表示します。
+* vision : T社のVision画像(English)を表示します。
 
 ## ライセンス
 
