@@ -2,6 +2,8 @@
 
 GAOは、Discord上でDAOらしからぬ中央集権を匂わせる挙動を検出すると発言者に対して注意を促すためのカスタムボットです。GAOは、Pythonで書かれ、discord.pyライブラリを使用しています。
 
+![icon](https://user-images.githubusercontent.com/4471301/226089972-23b5bda1-93e3-4391-b2ae-fba13de04ece.png)
+
 ## 動作環境
 
 GAOを動作させるのに必要なライブラリ
