@@ -33,7 +33,7 @@ async def on_message(message):
         ser.close()
 
     if message.content.startswith('トヨタウェイ'):
-        m = message.author.name + "さん、これを思い出すんだギャオ！"
+        m = message.author.name + "さん、これが我々の思いだギャオ！"
         path = os.getcwd() #get current path
         filepath = path + '/img/toyotaway.jpeg'
         await message.channel.send(file=discord.File(filepath))
