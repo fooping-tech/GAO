@@ -26,7 +26,7 @@ async def on_message(message):
     if message.content.startswith('トヨタファースト'):
         m = message.author.name + "さん、それDAOっぽくないギャオ！"
         await message.channel.send(m)
-        ser =  serial.Serial('/dev/cu.usbserial-0D5A601EF3',115200,timeout=1)
+        ser =  serial.Serial(config.ROBOT_ID,115200,timeout=1)
         print(ser.name)
         print("send data")
         ser.write(bytes('4','utf-8'))#send robot move command
@@ -38,7 +38,7 @@ async def on_message(message):
         filepath = path + '/img/toyotaway.jpeg'
         await message.channel.send(file=discord.File(filepath))
         await message.channel.send(m)
-        ser =  serial.Serial('/dev/cu.usbserial-0D5A601EF3',115200,timeout=1)
+        ser =  serial.Serial('config.ROBOT_ID',115200,timeout=1)
         print(ser.name)
         print("send data")
         ser.write(bytes('1','utf-8'))#send robot move command
@@ -61,7 +61,7 @@ async def on_message(message):
         filepath = path + '/img/toyotaway_e.jpeg'
         await message.channel.send(file=discord.File(filepath))
         await message.channel.send(m)
-        ser =  serial.Serial('/dev/cu.usbserial-0D5A601EF3',115200,timeout=1)
+        ser =  serial.Serial('config.ROBOT_ID',115200,timeout=1)
         print(ser.name)
         print("send data")
         ser.write(bytes('1','utf-8'))#send robot move command
