@@ -133,11 +133,6 @@ async def on_message(message):
         filepath = path + '/img/toyotaway.jpeg'
         await message.channel.send(file=discord.File(filepath))
         await message.channel.send(m)
-        ser =  serial.Serial('config.ROBOT_ID',115200,timeout=1)
-        print(ser.name)
-        print("send data")
-        ser.write(bytes('1','utf-8'))#send robot move command
-        ser.close()
     if message.content.startswith('ミッション'):
         m = author_name + "さん、これを思い出すんだギャオ！"
         path = os.getcwd()
@@ -156,11 +151,6 @@ async def on_message(message):
         filepath = path + '/img/toyotaway_e.jpeg'
         await message.channel.send(file=discord.File(filepath))
         await message.channel.send(m)
-        ser =  serial.Serial('config.ROBOT_ID',115200,timeout=1)
-        print(ser.name)
-        print("send data")
-        ser.write(bytes('1','utf-8'))#send robot move command
-        ser.close()
     if message.content.startswith('mission'):
         m = author_name + " san,check it out ...grrrr!"
         path = os.getcwd()
@@ -187,6 +177,11 @@ async def on_message(message):
         await message.channel.send(m)  
         unicodeEmoji = "\N{fire}"
         await message.channel.send("メッセージは燃やされてしまった。http:" + str(unicodeEmoji) + str(unicodeEmoji) + str(unicodeEmoji) + str(unicodeEmoji))
+        ser =  serial.Serial('config.ROBOT_ID',115200,timeout=1)
+        print(ser.name)
+        print("send data")
+        ser.write(bytes('2','utf-8'))#send robot move command
+        ser.close()
 
 # 褒めてくれるGAOくんも実装する。後ほど。
 
