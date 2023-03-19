@@ -41,14 +41,12 @@ def caution_message(author_name):
 
     # 0~2の範囲でランダムな整数を生成
     num = random.randint(0, 2)
-
     if num == 0:
         return "仏の顔も3度までギャオ"
     elif num == 1:
         return "ちょっと発言に注意ギャオ"
     else:
         return "怒ったギャオ"
-
 
 
 #When on_ready
@@ -64,9 +62,54 @@ async def on_message(message):
         return
 
     author_name = message.author.name
+    count_posts(author_name) # 投稿回数をカウント
 
-    # 投稿回数をカウントする関数を呼び出す
-    count_posts(author_name)
+    if '要求仕様' in message.content:
+        m = author_name + "さん、それDAOっぽくないギャオ！"
+        await message.channel.send(m)
+
+        # よろしくない発言をカウントして、多いと警告メッセージ
+        count = count_not_good_posts(author_name)
+        if (count == 2):
+            m2 = "ウォーターフォールの匂いがするギャオ！"
+            await message.channel.send(m2)
+        if (count == 3):
+            m2 = "よーし！DAOの文化を一緒に勉強しようギャオ！"
+            await message.channel.send(m2)
+
+    # if '予算' in message.content:
+    #     m = author_name + "さん、それDAOっぽくないギャオ！"
+    #     await message.channel.send(m)
+
+    #     # よろしくない発言をカウントして、多いと警告メッセージ
+    #     count = count_not_good_posts(author_name)
+    #     if (count == 2):
+    #         m2 = "予算の決定はOOギャオ！"
+    #         await message.channel.send(m2)
+    #     if (count == 3):
+    #         m2 = "予算の決定はOOギャオ！ちゃんと文章を考えるギャオ！"
+    #         await message.channel.send(m2)
+
+    if '予算' in message.content:
+        m = "予算を使うには、予算チャンネルを見るんだギャオ。"
+        await message.channel.send(m)
+        m = "予算をどうしたいんギャオか?"
+        await message.channel.send(m)
+        
+    if '残高' in message.content:
+        m = "今の残高は、100万ギャオコインだギャオ!"
+        await message.channel.send(m)
+
+    if '寄付' in message.content:
+        m = "どこに寄付するんだギャオ？予算チャンネルを見るんだギャオ"
+        await message.channel.send(m)
+    
+    if '購入' in message.content:
+        m = "了解詳しい手続きは予算チャンネルを見てほしいギャオ"
+        await message.channel.send(m)
+
+
+
 
     if message.content.startswith('トヨタファースト'):
         m = author_name + "さん、それDAOっぽくないギャオ！"
@@ -136,8 +179,15 @@ async def on_message(message):
         filepath = path + '/img/toyotamission.jpeg'
         await message.channel.send(file=discord.File(filepath))
         await message.channel.send(m)
-    if message.content.startswith('http://'):
+
+    # メッセージを残して、URL部分を炎に変える
+    if "http://" in message.content: # メッセージに"http"が含まれている場合
         await message.delete()#メッセージの削除
         m =  author_name + "さんの貼ってくれたURL怪しいのでごめんけど、消したギャオ！"
-        await message.channel.send(m)
+        await message.channel.send(m)  
+        unicodeEmoji = "\N{fire}"
+        await message.channel.send("メッセージは燃やされてしまった。http:" + str(unicodeEmoji) + str(unicodeEmoji) + str(unicodeEmoji) + str(unicodeEmoji))
+
+# 褒めてくれるGAOくんも実装する。後ほど。
+
 client.run(config.DISCORD_TOKEN)
