@@ -74,21 +74,43 @@ async def on_message(message):
             m2 = "ウォーターフォールの匂いがするギャオ！"
             await message.channel.send(m2)
         if (count == 3):
-            m2 = "DAOの文化を勉強するギャオ！。顧客調査から初めて〜〜〜云々"
+            m2 = "よーし！DAOの文化を一緒に勉強しようギャオ！"
             await message.channel.send(m2)
+
+    # if '予算' in message.content:
+    #     m = author_name + "さん、それDAOっぽくないギャオ！"
+    #     await message.channel.send(m)
+
+    #     # よろしくない発言をカウントして、多いと警告メッセージ
+    #     count = count_not_good_posts(author_name)
+    #     if (count == 2):
+    #         m2 = "予算の決定はOOギャオ！"
+    #         await message.channel.send(m2)
+    #     if (count == 3):
+    #         m2 = "予算の決定はOOギャオ！ちゃんと文章を考えるギャオ！"
+    #         await message.channel.send(m2)
 
     if '予算' in message.content:
-        m = author_name + "さん、それDAOっぽくないギャオ！"
+        m = "予算を使うには、予算チャンネルを見るんだギャオ。"
+        await message.channel.send(m)
+        m = "予算をどうしたいんギャオか?"
+        await message.channel.send(m)
+        
+    if '残高' in message.content:
+        m = "今の残高は、100万ギャオコインだギャオ!"
         await message.channel.send(m)
 
-        # よろしくない発言をカウントして、多いと警告メッセージ
-        count = count_not_good_posts(author_name)
-        if (count == 2):
-            m2 = "予算の決定はOOギャオ！"
-            await message.channel.send(m2)
-        if (count == 3):
-            m2 = "予算の決定はOOギャオ！ちゃんと文章を考えるギャオ！"
-            await message.channel.send(m2)
+    if '寄付' in message.content:
+        m = "どこに寄付するんだギャオ？予算チャンネルを見るんだギャオ"
+        await message.channel.send(m)
+    
+    if '購入' in message.content:
+        m = "了解詳しい手続きは予算チャンネルを見てほしいギャオ"
+        await message.channel.send(m)
+
+
+
+
     if message.content.startswith('トヨタファースト'):
         m = author_name + "さん、それDAOっぽくないギャオ！"
         await message.channel.send(m)
